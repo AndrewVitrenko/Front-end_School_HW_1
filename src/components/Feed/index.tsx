@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box, Pagination, Stack } from '@mui/material';
-import { Post } from '../Post';
+import { PostItem } from '../Post';
 import { getFeed } from '../../api/feed';
 import { Store } from '../../interfaces';
 
@@ -13,7 +13,7 @@ export const Feed: React.FC = () => {
 
   useEffect(() => {
     dispatch(getFeed());
-  }, []);
+  }, [dispatch]);
 
   const handlePagination = (e: ChangeEvent<unknown>, p: number) => {
     setPage(p);
@@ -36,7 +36,7 @@ export const Feed: React.FC = () => {
         {feed.map(
           (post, i) =>
             i + 1 > (page - 1) * PER_PAGE &&
-            i < page * PER_PAGE && <Post key={post.id} post={post} />
+            i < page * PER_PAGE && <PostItem key={post.id} post={post} />
         )}
       </Box>
       <Stack spacing={2}>

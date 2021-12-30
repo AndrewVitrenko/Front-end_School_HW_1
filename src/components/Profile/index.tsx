@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Typography, Card, CardContent, Box, Pagination, Stack } from '@mui/material';
-import { Video } from '../Video';
+import { VideoItem } from '../Video';
 import { Store } from '../../interfaces';
 import { getUserInfo, getUserFeed } from '../../api/user';
 import userFeedBase from '../../user-feed.json';
@@ -21,7 +21,7 @@ export const Profile: React.FC = () => {
     dispatch(getUserInfo());
     // if API works we can use dispatch(getUserFeed());
     dispatch(storeUserFeed(userFeedBase.itemList));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box>
@@ -52,7 +52,7 @@ export const Profile: React.FC = () => {
         {userFeed.map((video, i) =>
           i + 1 > (page - 1) * PER_PAGE &&
           i < page * PER_PAGE &&
-          <Video key={video.id} video={video} />
+          <VideoItem key={video.id} video={video} />
         )}
       </Box>
       <Stack spacing={2}>

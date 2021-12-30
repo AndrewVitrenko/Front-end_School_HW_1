@@ -7,9 +7,9 @@ import {
   Link,
   Avatar
 } from '@mui/material';
-import { IPost } from '../../interfaces';
+import { Post } from '../../interfaces';
 
-export const Post: React.FC<{ post: IPost }> = ({ post }) => {
+export const PostItem: React.FC<{ post: Post }> = ({ post }) => {
   return (
     <Card>
       <CardContent>

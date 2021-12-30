@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import { IVideo } from '../../interfaces';
+import { Video } from '../../interfaces';
 
-export const Video: React.FC<{ video: IVideo }> = ({ video }) => {
+export const VideoItem: React.FC<{ video: Video }> = ({ video }) => {
   return (
     <Card>
       <CardContent>

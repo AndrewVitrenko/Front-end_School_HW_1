@@ -1,4 +1,4 @@
-export interface IPost {
+export interface Post {
   authorMeta: {
     avatar: string;
     digg: number;
@@ -97,7 +97,7 @@ export interface User {
   itemList: string[];
 }
 
-export interface IVideo {
+export interface Video {
   id: string;
   desc: string;
   createTime: number;
@@ -218,8 +218,8 @@ export interface IVideo {
 }
 
 export interface Store {
-  feed: IPost[];
+  feed: Post[];
   user: User;
-  userFeed: IVideo[];
+  userFeed: Video[];
   error: string;
 }
