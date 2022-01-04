@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IPost, Store, User, IVideo } from '../interfaces';
+import { Post, Store, User, Video } from '../interfaces';
 
 const initialState: Store = {
   feed: [],
@@ -49,7 +49,7 @@ const rootReducer = createSlice({
   name: 'rootReducer',
   initialState,
   reducers: {
-    storeFeed(store, action: PayloadAction<IPost[]>) {
+    storeFeed(store, action: PayloadAction<Post[]>) {
       store.feed = action.payload;
     },
     storeUserInfo(store, action: PayloadAction<User>) {
@@ -61,7 +61,7 @@ const rootReducer = createSlice({
     deleteError(store) {
       store.error = '';
     },
-    storeUserFeed(store, action: PayloadAction<IVideo[]>) {
+    storeUserFeed(store, action: PayloadAction<Video[]>) {
       store.userFeed = action.payload;
     }
   }
