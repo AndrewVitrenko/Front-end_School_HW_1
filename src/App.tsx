@@ -1,22 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Feed } from './components/Feed';
-import { Profile } from './components/Profile';
-import { Error } from './components/Error';
-import { Store } from './interfaces';
+import { Main } from './components/Main';
+
 
 function App() {
-  const { error } = useSelector((store: Store) => store);
 
   return (
     <Router>
       <Header />
-      {error ? <Error /> : <Routes>
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>}
+      <Main />
     </Router>
   );
 }
