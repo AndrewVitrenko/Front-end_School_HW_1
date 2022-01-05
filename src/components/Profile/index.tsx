@@ -57,7 +57,7 @@ export const Profile: React.FC = () => {
         <Pagination
           count={Math.ceil(userFeed.length / PER_PAGE)}
           onChange={handlePagination}
-          page={page}
+          page={page + 1}
           sx={{
             '& .MuiPagination-ul': {
               justifyContent: 'center'
