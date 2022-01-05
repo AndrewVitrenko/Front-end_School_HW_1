@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Typography, Card, CardContent, Box, Pagination, Stack } from '@mui/material';
-import { VideoItem } from '../Video';
+import { VideoItem } from '../VideoItem';
 import { Store } from '../../interfaces';
 import { getUserInfo, getUserFeed } from '../../api/user';
 import userFeedBase from '../../user-feed.json';
