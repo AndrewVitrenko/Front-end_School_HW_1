@@ -8,7 +8,7 @@ import { Store } from '../../interfaces';
 export const Feed: React.FC = () => {
   const dispatch = useDispatch();
   const { feed } = useSelector((store: Store) => store);
-  const [ page, setPage ] = useState<number>(1);
+  const [ page, setPage ] = useState<number>(0);
   const PER_PAGE = 10;
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export const Feed: React.FC = () => {
   }, [dispatch]);
 
   const handlePagination = (e: ChangeEvent<unknown>, p: number) => {
-    setPage(p);
+    setPage(p - 1);
   };
 
   return (
@@ -33,17 +33,15 @@ export const Feed: React.FC = () => {
           },
         }}
       >
-        {feed.map(
-          (post, i) =>
-            i + 1 > (page - 1) * PER_PAGE &&
-            i < page * PER_PAGE && <PostItem key={post.id} post={post} />
-        )}
+        {feed
+          .slice(page * PER_PAGE, (page + 1) * PER_PAGE)
+          .map(post => <PostItem key={post.id} post={post} />)}
       </Box>
       <Stack spacing={2}>
         <Pagination
           count={Math.ceil(feed.length / PER_PAGE)}
           onChange={handlePagination}
-          page={page}
+          page={page + 1}
           shape="rounded"
           sx={{
             '& .MuiPagination-ul': {
