@@ -10,11 +10,11 @@ import { storeUserFeed } from '../../store/reducer';
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();
   const { user, userFeed } = useSelector((store: Store) => store);
-  const [ page, setPage ] = useState<number>(1);
+  const [ page, setPage ] = useState<number>(0);
   const PER_PAGE = 10;
 
   const handlePagination = (e: ChangeEvent<unknown>, p: number) => {
-    setPage(p);
+    setPage(p - 1);
   };
 
   useEffect(() => {
@@ -49,11 +49,9 @@ export const Profile: React.FC = () => {
           }
         }}
       >
-        {userFeed.map((video, i) =>
-          i + 1 > (page - 1) * PER_PAGE &&
-          i < page * PER_PAGE &&
-          <VideoItem key={video.id} video={video} />
-        )}
+        {userFeed
+          .slice(page * PER_PAGE, (page + 1) * PER_PAGE)
+          .map(video => <VideoItem key={video.id} video={video} />)}
       </Box>
       <Stack spacing={2}>
         <Pagination
