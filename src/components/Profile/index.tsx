@@ -1,7 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Avatar, Typography, Card, CardContent, Box, Pagination, Stack } from '@mui/material';
+import { Avatar, Typography, Card, CardContent, Box } from '@mui/material';
 import { VideoItem } from '../VideoItem';
+import { PaginationBar } from '../PaginationBar';
 import { Store } from '../../interfaces';
 import { getUserInfo, getUserFeed } from '../../api/user';
 import userFeedBase from '../../user-feed.json';
@@ -53,18 +54,7 @@ export const Profile: React.FC = () => {
           .slice(page * PER_PAGE, (page + 1) * PER_PAGE)
           .map(video => <VideoItem key={video.id} video={video} />)}
       </Box>
-      <Stack spacing={2}>
-        <Pagination
-          count={Math.ceil(userFeed.length / PER_PAGE)}
-          onChange={handlePagination}
-          page={page + 1}
-          sx={{
-            '& .MuiPagination-ul': {
-              justifyContent: 'center'
-            }
-          }}
-        />
-      </Stack>
+      <PaginationBar current={page + 1} length={userFeed.length} perPage={PER_PAGE} handleChange={handlePagination} />
     </Box>
   );
 };

@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface Post {
   authorMeta: {
     avatar: string;
@@ -222,4 +224,11 @@ export interface Store {
   user: User;
   userFeed: Video[];
   error: string;
+}
+
+export interface PaginationProps {
+  handleChange: (e: ChangeEvent<unknown>, p: number) => void;
+  current: number;
+  perPage: number;
+  length: number;
 }

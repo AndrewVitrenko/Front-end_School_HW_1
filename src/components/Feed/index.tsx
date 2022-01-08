@@ -2,6 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box, Pagination, Stack } from '@mui/material';
 import { PostItem } from '../PostItem';
+import { PaginationBar } from '../PaginationBar'; 
 import { getFeed } from '../../api/feed';
 import { Store } from '../../interfaces';
 
@@ -37,19 +38,7 @@ export const Feed: React.FC = () => {
           .slice(page * PER_PAGE, (page + 1) * PER_PAGE)
           .map(post => <PostItem key={post.id} post={post} />)}
       </Box>
-      <Stack spacing={2}>
-        <Pagination
-          count={Math.ceil(feed.length / PER_PAGE)}
-          onChange={handlePagination}
-          page={page + 1}
-          shape="rounded"
-          sx={{
-            '& .MuiPagination-ul': {
-              justifyContent: 'center'
-            }
-          }}
-        />
-      </Stack>
+      <PaginationBar handleChange={handlePagination} current={page + 1} length={feed.length} perPage={PER_PAGE} />
     </>
   );
 };
