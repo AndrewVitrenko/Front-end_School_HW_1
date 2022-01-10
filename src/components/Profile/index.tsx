@@ -29,12 +29,13 @@ export const Profile: React.FC = () => {
       <Card>
         <Typography variant="h6">User Info</Typography>
         <CardContent>
-          <Avatar alt="user avatar" src={user.user.avatarLarger} />
-          <Typography variant="subtitle1">Name: {user.user.nickname}</Typography>
-          <Typography variant="subtitle1">Is account private: {user.user.privateAccount ? 'yes' : 'no'}</Typography>
-          <Typography variant="subtitle1">Signature: {user.user.signature}</Typography>
+          <Avatar alt="user avatar" src={user.avatarLarger} />
+          <Typography variant="subtitle1">Name: {user.nickname}</Typography>
+          <Typography variant="subtitle1">Is account private: {user.privateAccount ? 'yes' : 'no'}</Typography>
+          <Typography variant="subtitle1">Signature: {user.signature}</Typography>
+          {/* this code is commented due to changes in api
           <Typography variant="subtitle1">Followers: {user.stats.followerCount}</Typography>
-          <Typography variant="subtitle1">Following: {user.stats.followingCount}</Typography>
+          <Typography variant="subtitle1">Following: {user.stats.followingCount}</Typography> */}
         </CardContent>
       </Card>
       <Box

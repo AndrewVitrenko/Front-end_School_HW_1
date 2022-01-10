@@ -4,45 +4,14 @@ import { Post, Store, User, Video } from '../interfaces';
 const initialState: Store = {
   feed: [],
   user: {
-    user: {
-      id: '',
-      shortId: '',
-      uniqueId: '',
-      nickname: '',
-      avatarLarger: '',
-      avatarMedium: '',
-      avatarThumb: '',
-      signature: '',
-      createTime: 0,
-      verified: false,
-      secUid: '',
-      ftc: false,
-      relation: 0,
-      openFavorite: false,
-      bioLink: {
-        link: 0,
-        risk: 0,
-      },
-      commentSetting: 0,
-      duetSetting: 0,
-      stitchSetting: 0,
-      privateAccount: false,
-      secret: false,
-      isADVirtual: false,
-      roomId: '',
-    },
-    stats: {
-      followerCount: 0,
-      followingCount: 0,
-      heart: 0,
-      heartCount: 0,
-      videoCount: 0,
-      diggCount: 0,
-    },
-    itemList: [],
+    id: '',
+    nickname: '',
+    avatarLarger: '',
+    signature: '',
+    privateAccount: false,
   },
   userFeed: [],
-  error: ''
+  error: '',
 };
 
 const rootReducer = createSlice({
@@ -63,9 +32,15 @@ const rootReducer = createSlice({
     },
     storeUserFeed(store, action: PayloadAction<Video[]>) {
       store.userFeed = action.payload;
-    }
-  }
+    },
+  },
 });
 
-export const { storeFeed, storeUserInfo, setError, deleteError, storeUserFeed } = rootReducer.actions;
+export const {
+  storeFeed,
+  storeUserInfo,
+  setError,
+  deleteError,
+  storeUserFeed,
+} = rootReducer.actions;
 export default rootReducer.reducer;
