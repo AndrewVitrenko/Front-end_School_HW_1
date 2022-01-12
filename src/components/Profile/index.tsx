@@ -1,12 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Typography, Card, CardContent, Box } from '@mui/material';
-import { VideoItem } from '../VideoItem';
-import { PaginationBar } from '../PaginationBar';
-import { Store } from '../../interfaces';
-import { getUserInfo, getUserFeed } from '../../api/user';
-import userFeedBase from '../../user-feed.json';
-import { storeUserFeed } from '../../store/reducer';
+import { Store } from 'interfaces';
+import { getUserInfo, getUserFeed } from 'api/user';
+import userFeedBase from 'user-feed.json';
+import { storeUserFeed } from 'store/reducer';
+import { VideoItem } from 'components/VideoItem';
+import { PaginationBar } from 'components/PaginationBar';
 
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();

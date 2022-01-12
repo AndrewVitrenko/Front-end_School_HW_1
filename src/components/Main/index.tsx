@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Feed } from '../Feed';
-import { Profile } from '../Profile';
-import { Error } from '../Error';
-import { Store } from '../../interfaces';
+import { Store } from 'interfaces';
+import { Feed } from 'components/Feed';
+import { Profile } from 'components/Profile';
+import { Error } from 'components/Error';
 
 export const Main: React.FC = () => {
   const { error } = useSelector((store: Store) => store);

@@ -7,7 +7,7 @@ import {
   Link,
   Avatar
 } from '@mui/material';
-import { Post } from '../../interfaces';
+import { Post } from 'interfaces';
 
 export const PostItem: React.FC<{ post: Post }> = ({ post }) => {
   return (

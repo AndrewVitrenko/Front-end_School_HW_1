@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box } from '@mui/material';
-import { PostItem } from '../PostItem';
-import { PaginationBar } from '../PaginationBar'; 
-import { getFeed } from '../../api/feed';
-import { Store } from '../../interfaces';
+import { PostItem } from 'components/PostItem';
+import { PaginationBar } from 'components/PaginationBar'; 
+import { getFeed } from 'api/feed';
+import { Store } from 'interfaces';
 
 export const Feed: React.FC = () => {
   const dispatch = useDispatch();
