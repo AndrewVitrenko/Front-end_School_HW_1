@@ -2,8 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { Store } from 'interfaces';
-import { Feed } from 'components/Feed';
-import { Profile } from 'components/Profile';
+import { Feed } from 'pages/Feed';
+import { Profile } from 'pages/Profile';
 import { Error } from 'components/Error';
 
 export const Main: React.FC = () => {
