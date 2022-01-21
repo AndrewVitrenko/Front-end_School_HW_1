@@ -6,7 +6,7 @@ import { Feed } from 'pages/Feed';
 import { Profile } from 'pages/Profile';
 import { Error } from 'components/Error';
 
-export const Main: React.FC = () => {
+export const Routing: React.FC = () => {
   const { error } = useSelector((store: Store) => store);
 
   return (
