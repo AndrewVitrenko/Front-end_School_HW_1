@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box, Typography } from '@mui/material';
-import { PostItem } from 'components/PostItem';
+import { PostItem } from 'entities/PostItem';
 import { PaginationBar } from 'components/PaginationBar'; 
 import { getFeed } from 'api/feed';
 import { Store } from 'interfaces';

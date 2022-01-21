@@ -5,7 +5,7 @@ import { Store } from 'interfaces';
 import { getUserInfo, getUserFeed } from 'api/user';
 import userFeedBase from 'user-feed.json';
 import { storeUserFeed } from 'store/reducer';
-import { VideoItem } from 'components/VideoItem';
+import { VideoItem } from 'entities/VideoItem';
 import { PaginationBar } from 'components/PaginationBar';
 
 export const Profile: React.FC = () => {
