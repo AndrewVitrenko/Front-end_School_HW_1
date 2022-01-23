@@ -6,7 +6,7 @@ import { getUserInfo, getUserFeed } from 'api/user';
 import userFeedBase from 'user-feed.json';
 import { storeUserFeed } from 'store/reducer';
 import { VideoItem } from 'entities/VideoItem';
-import { PaginationBar } from 'components/PaginationBar';
+import { PaginationBar } from 'features/PaginationBar';
 
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();
