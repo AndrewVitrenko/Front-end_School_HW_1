@@ -1,5 +1,5 @@
 import { render, screen } from 'test-utils';
-import { PostItem } from '.';
+import { PostItem } from 'entities/PostItem';
 import { Post } from 'interfaces';
 
 describe('PostItem', () => {

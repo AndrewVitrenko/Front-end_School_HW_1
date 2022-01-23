@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 import { render, screen, fireEvent } from 'test-utils';
-import { PaginationBar } from '.';
+import { PaginationBar } from 'features/PaginationBar';
 
 describe('PaginationBar', () => {
   const props = {

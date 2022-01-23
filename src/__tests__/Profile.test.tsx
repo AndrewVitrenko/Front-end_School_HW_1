@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, screen, fireEvent } from 'test-utils';
-import { Profile } from '.';
+import { Profile } from 'pages/Profile';
 import { User } from 'interfaces';
 
 describe('Profile component', () => {

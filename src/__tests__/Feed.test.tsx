@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { render, screen, fireEvent } from 'test-utils';
-import { Feed } from '.';
+import { Feed } from 'pages/Feed';
 import { Post } from 'interfaces';
 
 describe('testing Feed component', () => {

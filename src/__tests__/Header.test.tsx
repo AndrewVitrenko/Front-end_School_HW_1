@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from 'test-utils';
-import { Header } from '.';
+import { Header } from 'entities/Header';
 
 describe('Header', () => {
   

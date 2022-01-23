@@ -5,7 +5,7 @@ import reducer, {
   setError,
   storeUserInfo,
   deleteError
-} from './reducer';
+} from 'store/reducer';
 
 describe('testing reducer', () => {
   let initialState: Store; 

@@ -1,5 +1,5 @@
 import { render, screen } from 'test-utils';
-import { VideoItem } from '.';
+import { VideoItem } from 'entities/VideoItem';
 import { Video } from 'interfaces';
 
 describe('VideoItem', () => {
