@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pagination, Stack } from '@mui/material';
-import { PaginationProps } from 'interfaces';
+import { PaginationProps } from 'shared/interfaces';
 
 export const PaginationBar: React.FC<PaginationProps> = ({ handleChange, current, perPage, length }) => {
   return (

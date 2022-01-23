@@ -3,6 +3,6 @@ export const http = (url: string, method = 'GET'): Promise<any> =>
     method,
     headers: {
       'x-rapidapi-host': 'tiktok33.p.rapidapi.com',
-      'x-rapidapi-key': 'd4136f41cdmsha620330627cd716p10ebabjsn342957036f7b',
+      'x-rapidapi-key': 'c1257dc04cmshd888bbb072eb770p1f2b8ajsnbf16d4cd1d66',
     },
   });

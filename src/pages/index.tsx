@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Store } from 'interfaces';
-import { Feed } from 'components/Feed';
-import { Profile } from 'components/Profile';
-import { Error } from 'components/Error';
+import { Store } from 'shared/interfaces';
+import { Feed } from 'pages/Feed';
+import { Profile } from 'pages/Profile';
+import { Error } from 'entities/Error';
 
-export const Main: React.FC = () => {
+export const Routing: React.FC = () => {
   const { error } = useSelector((store: Store) => store);
 
   return (
