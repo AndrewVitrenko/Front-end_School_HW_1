@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Snackbar } from '@mui/material';
-import { Store } from '../../interfaces';
+import { Store } from 'shared/interfaces';
 
 export const Error: React.FC = () => {
   const { error } = useSelector((store: Store) => store);

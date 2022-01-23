@@ -1,4 +1,4 @@
-import { Store, User, Post, Video } from 'interfaces';
+import { Store, User, Post, Video } from 'shared/interfaces';
 import reducer, {
   storeFeed,
   storeUserFeed,

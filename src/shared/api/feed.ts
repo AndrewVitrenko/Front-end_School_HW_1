@@ -1,5 +1,5 @@
-import { AppDispatch } from '../store';
-import { storeFeed, setError, deleteError } from '../store/reducer';
+import { AppDispatch } from '../../store';
+import { storeFeed, setError, deleteError } from '../../store/reducer';
 import { http } from './http';
 
 export const getFeed = () => async (dispatch: AppDispatch): Promise<any> => {

@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Box, Typography } from '@mui/material';
 import { PostItem } from 'entities/PostItem';
 import { PaginationBar } from 'features/PaginationBar'; 
-import { getFeed } from 'api/feed';
-import { Store } from 'interfaces';
+import { getFeed } from 'shared/api/feed';
+import { Store } from 'shared/interfaces';
 
 export const Feed: React.FC = () => {
   const dispatch = useDispatch();

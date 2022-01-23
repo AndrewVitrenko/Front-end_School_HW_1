@@ -1,5 +1,5 @@
-import { AppDispatch } from '../store';
-import { storeUserInfo, setError, deleteError, storeUserFeed } from '../store/reducer';
+import { AppDispatch } from '../../store';
+import { storeUserInfo, setError, deleteError, storeUserFeed } from '../../store/reducer';
 import { http } from './http';
 
 export const getUserInfo = () => async (dispatch: AppDispatch): Promise<any> => {

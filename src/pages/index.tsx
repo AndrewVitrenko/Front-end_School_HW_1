@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Store } from 'interfaces';
+import { Store } from 'shared/interfaces';
 import { Feed } from 'pages/Feed';
 import { Profile } from 'pages/Profile';
 import { Error } from 'entities/Error';

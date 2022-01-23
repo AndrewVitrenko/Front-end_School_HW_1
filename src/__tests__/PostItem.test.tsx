@@ -1,6 +1,6 @@
 import { render, screen } from 'test-utils';
 import { PostItem } from 'entities/PostItem';
-import { Post } from 'interfaces';
+import { Post } from 'shared/interfaces';
 
 describe('PostItem', () => {
   let post: Post;

@@ -1,6 +1,6 @@
 import { render, screen } from 'test-utils';
 import { VideoItem } from 'entities/VideoItem';
-import { Video } from 'interfaces';
+import { Video } from 'shared/interfaces';
 
 describe('VideoItem', () => {
   let video: Video;

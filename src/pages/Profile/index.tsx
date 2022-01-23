@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Avatar, Typography, Card, CardContent, Box } from '@mui/material';
-import { Store } from 'interfaces';
-import { getUserInfo, getUserFeed } from 'api/user';
+import { Store } from 'shared/interfaces';
+import { getUserInfo, getUserFeed } from 'shared/api/user';
 import userFeedBase from 'user-feed.json';
 import { storeUserFeed } from 'store/reducer';
 import { VideoItem } from 'entities/VideoItem';
