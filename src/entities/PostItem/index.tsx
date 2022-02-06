@@ -1,17 +1,16 @@
 import React from 'react';
 import {
-  Card,
   CardContent,
-  Typography,
   CardMedia,
   Link,
   Avatar
 } from '@mui/material';
 import { Post } from 'shared/interfaces';
+import { PostCard, PostText } from './PostItem.styled';
 
 export const PostItem: React.FC<{ post: Post }> = ({ post }) => {
   return (
-    <Card>
+    <PostCard>
       <CardContent>
         <CardMedia
           component="video"
@@ -19,7 +18,7 @@ export const PostItem: React.FC<{ post: Post }> = ({ post }) => {
           height="300"
           controls
         />
-        <Typography variant="subtitle1">{post.text}</Typography>
+        <PostText variant="subtitle1">{post.text}</PostText>
         <Link
           color="inherit"
           display="inline-flex"
@@ -37,14 +36,14 @@ export const PostItem: React.FC<{ post: Post }> = ({ post }) => {
               marginRight: '12px'
             }}
           />
-          <Typography variant="overline">{post.authorMeta.nickName}</Typography>
+          <PostText variant="overline">{post.authorMeta.nickName}</PostText>
         </Link>
-        <Typography variant="caption" display="block">
+        <PostText variant="caption" display="block">
           {post.hashtags.map(hash => '#' + hash.name + ' ')}
-        </Typography>
-        <Typography variant="subtitle1">Comments count: {post.commentCount}</Typography>
-        <Typography variant="subtitle1">Likes count: {post.diggCount}</Typography>
+        </PostText>
+        <PostText variant="subtitle1">Comments count: {post.commentCount}</PostText>
+        <PostText variant="subtitle1">Likes count: {post.diggCount}</PostText>
       </CardContent>
-    </Card>
+    </PostCard>
   );
 };

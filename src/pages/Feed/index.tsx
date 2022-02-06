@@ -1,10 +1,11 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { PostItem } from 'entities/PostItem';
 import { PaginationBar } from 'features/PaginationBar'; 
 import { getFeed } from 'shared/api/feed';
 import { Store } from 'shared/interfaces';
+import { PageTitle } from './Feed.styled';
 
 export const Feed: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,8 @@ export const Feed: React.FC = () => {
 
   return (
     <>
-      <Typography variant="h6">Trending Feed</Typography>
+      <PageTitle
+        variant="h6">Trending Feed</PageTitle>
       <Box
         sx={{
           display: 'flex',

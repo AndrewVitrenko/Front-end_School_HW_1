@@ -1,12 +1,13 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { CardContent, CardMedia } from '@mui/material';
 import { Video } from 'shared/interfaces';
+import { Text, Container } from './VideoItem.styled';
 
 export const VideoItem: React.FC<{ video: Video }> = ({ video }) => {
   return (
-    <Card>
+    <Container>
       <CardContent>
-        <Typography variant="h6">Played: {video.stats.playCount} times!</Typography>
+        <Text variant="h6">Played: {video.stats.playCount} times!</Text>
         <CardMedia
           component="video"
           controls
@@ -14,6 +15,6 @@ export const VideoItem: React.FC<{ video: Video }> = ({ video }) => {
           src={video.video.playAddr}
         />
       </CardContent>
-    </Card>
+    </Container>
   );
 };

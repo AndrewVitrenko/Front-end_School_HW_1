@@ -1,12 +1,13 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Avatar, Typography, Card, CardContent, Box } from '@mui/material';
+import { Avatar, CardContent, Box } from '@mui/material';
 import { Store } from 'shared/interfaces';
 import { getUserInfo, getUserFeed } from 'shared/api/user';
 import userFeedBase from 'user-feed.json';
 import { storeUserFeed } from 'store/reducer';
 import { VideoItem } from 'entities/VideoItem';
 import { PaginationBar } from 'features/PaginationBar';
+import { UserCard, PageTitle, UserText } from './Profile.styled';
 
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,18 +27,18 @@ export const Profile: React.FC = () => {
 
   return (
     <Box>
-      <Card>
-        <Typography variant="h6">User Info</Typography>
+      <UserCard>
+        <PageTitle variant="h6">User Info</PageTitle>
         <CardContent>
           <Avatar alt="user avatar" src={user.avatarLarger} />
-          <Typography variant="subtitle1">Name: {user.nickname}</Typography>
-          <Typography variant="subtitle1">Is account private: {user.privateAccount ? 'yes' : 'no'}</Typography>
-          <Typography variant="subtitle1">Signature: {user.signature}</Typography>
+          <UserText variant="subtitle1">Name: {user.nickname}</UserText>
+          <UserText variant="subtitle1">Is account private: {user.privateAccount ? 'yes' : 'no'}</UserText>
+          <UserText variant="subtitle1">Signature: {user.signature}</UserText>
           {/* this code is commented due to changes in api
-          <Typography variant="subtitle1">Followers: {user.stats.followerCount}</Typography>
-          <Typography variant="subtitle1">Following: {user.stats.followingCount}</Typography> */}
+          <UserText variant="subtitle1">Followers: {user.stats.followerCount}</UserText>
+          <UserText variant="subtitle1">Following: {user.stats.followingCount}</UserText> */}
         </CardContent>
-      </Card>
+      </UserCard>
       <Box
         sx={{
           display: 'flex',

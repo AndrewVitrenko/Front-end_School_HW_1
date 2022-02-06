@@ -1,10 +1,11 @@
 import React from 'react';
-import { Pagination, Stack } from '@mui/material';
+import { Pagination } from '@mui/material';
 import { PaginationProps } from 'shared/interfaces';
+import { PagBar } from './PaginationBar.styled';
 
 export const PaginationBar: React.FC<PaginationProps> = ({ handleChange, current, perPage, length }) => {
   return (
-    <Stack spacing={2}>
+    <PagBar spacing={2}>
         <Pagination
           count={Math.ceil(length / perPage)}
           onChange={handleChange}
@@ -16,6 +17,6 @@ export const PaginationBar: React.FC<PaginationProps> = ({ handleChange, current
             }
           }}
         />
-      </Stack>
+      </PagBar>
   )
 };

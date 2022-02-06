@@ -1,10 +1,12 @@
 import React from 'react';
-import Router from './providers';
+import Providers from './providers';
 import './index.css';
 
 const App: React.FC = () => {
   return (
-    <Router />
+    <Providers.ThemeWrapper>
+      <Providers.Router />
+    </Providers.ThemeWrapper>
   );
 }
 
