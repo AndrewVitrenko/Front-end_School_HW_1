@@ -5,9 +5,9 @@ import { Store } from 'shared/interfaces';
 import { getUserInfo, getUserFeed } from 'shared/api/user';
 import userFeedBase from 'user-feed.json';
 import { storeUserFeed } from 'store/reducer';
-import { VideoItem } from 'entities/VideoItem';
+import { VideoItem } from '@AndrewVitrenko/post-video-library';
 import { PaginationBar } from 'features/PaginationBar';
-import { UserCard, PageTitle, UserText } from './Profile.styled';
+import { UserCard, PageTitle, UserText, Container } from './Profile.styled';
 
 export const Profile: React.FC = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export const Profile: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <Box>
+    <Container>
       <UserCard>
         <PageTitle variant="h6">User Info</PageTitle>
         <CardContent>
@@ -57,6 +57,6 @@ export const Profile: React.FC = () => {
           .map(video => <VideoItem key={video.id} video={video} />)}
       </Box>
       <PaginationBar current={page + 1} length={userFeed.length} perPage={PER_PAGE} handleChange={handlePagination} />
-    </Box>
+    </Container>
   );
 };

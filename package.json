@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@AndrewVitrenko/post-video-library": "^2.1.0",
+    "@AndrewVitrenko/post-video-library": "^2.2.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",

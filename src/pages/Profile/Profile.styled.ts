@@ -1,5 +1,17 @@
 import styled from 'styled-components';
-import { Card, Typography } from '@mui/material';
+import { Card, Typography, Box } from '@mui/material';
+
+export const Container = styled(Box)`
+  .MuiCard-root {
+    background-color: ${props => props.theme.cardBackground} !important;
+    transition: all 0.3s ease-in-out !important;
+  }
+  
+  .MuiTypography-root {
+    color: ${props => props.theme.cardText};
+    transition: all 0.3s ease-in-out;
+  }
+`;
 
 export const UserCard = styled(Card)`
   background-color: ${props => props.theme.cardBackground} !important;
