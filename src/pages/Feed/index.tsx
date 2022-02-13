@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Box } from '@mui/material';
-import { PostItem } from 'entities/PostItem';
+import { PostItem } from '@AndrewVitrenko/post-video-library';
 import { PaginationBar } from 'features/PaginationBar'; 
 import { getFeed } from 'shared/api/feed';
 import { Store } from 'shared/interfaces';
-import { PageTitle } from './Feed.styled';
+import { PageTitle, Container } from './Feed.styled';
 
 export const Feed: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const Feed: React.FC = () => {
   };
 
   return (
-    <>
+    <Container>
       <PageTitle
         variant="h6">Trending Feed</PageTitle>
       <Box
@@ -42,6 +42,6 @@ export const Feed: React.FC = () => {
           .map(post => <PostItem key={post.id} post={post} />)}
       </Box>
       <PaginationBar handleChange={handlePagination} current={page + 1} length={feed.length} perPage={PER_PAGE} />
-    </>
+    </Container>
   );
 };

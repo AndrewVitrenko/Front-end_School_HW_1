@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@AndrewVitrenko/post-video-library": "^2.1.0",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.3.1",
@@ -15,6 +16,7 @@
     "@types/node": "^16.11.15",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "esbuild": "^0.14.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -26,7 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --format=esm --outdir=build",
     "test": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
