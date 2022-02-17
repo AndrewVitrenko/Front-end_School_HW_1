@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from 'test-utils';
 import { PostItem } from '.';
 import { Post } from 'interfaces';
@@ -31,4 +32,4 @@ describe('PostItem', () => {
     expect(screen.getByText(`Comments count: ${post.commentCount}`)).toBeInTheDocument();
     expect(screen.getByText(`Likes count: ${post.diggCount}`)).toBeInTheDocument();
   });
-})
+});

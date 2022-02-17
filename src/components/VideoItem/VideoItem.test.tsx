@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from 'test-utils';
 import { VideoItem } from '.';
 import { Video } from 'interfaces';
@@ -19,4 +20,4 @@ describe('VideoItem', () => {
     render(<VideoItem video={video} />);
     expect(screen.getByText(`Played: ${video.stats.playCount} times!`)).toBeInTheDocument();
   });
-})
+});
