@@ -21,7 +21,7 @@ export const Feed: React.FC = () => {
   };
 
   return (
-    <>
+    <Box className="feed-page">
       <Typography variant="h6">Trending Feed</Typography>
       <Box
         sx={{
@@ -40,6 +40,6 @@ export const Feed: React.FC = () => {
           .map(post => <PostItem key={post.id} post={post} />)}
       </Box>
       <PaginationBar handleChange={handlePagination} current={page + 1} length={feed.length} perPage={PER_PAGE} />
-    </>
+    </Box>
   );
 };

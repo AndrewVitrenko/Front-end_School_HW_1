@@ -25,7 +25,7 @@ export const Profile: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <Box>
+    <Box className="profile-page">
       <Card>
         <Typography variant="h6">User Info</Typography>
         <CardContent>
