@@ -17,5 +17,5 @@ export const Main: React.FC = () => {
         <Route path="/profile" element={<Profile />} />
       </Routes>}
     </>
-  )
-}
+  );
+};
