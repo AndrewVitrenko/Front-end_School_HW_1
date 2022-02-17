@@ -1,5 +1,4 @@
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import React from 'react';
 import { render, screen, fireEvent } from 'test-utils';
 import { Feed } from '.';
 import { Post } from 'interfaces';
@@ -23,34 +22,26 @@ describe('testing Feed component', () => {
     }
   };
 
-  const handlers = [
-    rest.get('https://tiktok33.p.rapidapi.com/trending/feed', (req, res, ctx) => {
-      const response = new Array(30);
-      for (let i = 0; i < response.length; i++) {
-        response[i] = {
-          ...post,
-          id: `${i + 1}`
-        };
-      }
-      return res(ctx.json(response), ctx.delay(150))
-    })
-  ];
-
-  const server = setupServer(...handlers);
-
-  beforeAll(() => server.listen({
-    onUnhandledRequest: ({method, url}) => {
-      if (!url.pathname.endsWith('/feed')) {
-        throw new Error('Forbidden request');
-      }
+  beforeEach(() => {
+    const response = new Array(30);
+    for (let i = 0; i < response.length; i++) {
+      response[i] = {
+        ...post,
+        id: `${i + 1}`
+      };
     }
-  }));
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(response),
+        ok: true,
+      })
+    ) as jest.Mock;
+  });
 
   it('should render component', async () => {
-    render(<Feed />);
-    expect(screen.getByText('Trending Feed')).toBeInTheDocument();
+    const { container } = render(<Feed />);
+    expect(container.firstChild).toHaveClass('feed-page');
     expect(await screen.findByText('3')).toBeInTheDocument();
   });
 
@@ -59,4 +50,4 @@ describe('testing Feed component', () => {
     fireEvent.click(await screen.findByText('3'));
     expect(screen.getByText('3')).toHaveClass('Mui-selected');
   });
-})
+});

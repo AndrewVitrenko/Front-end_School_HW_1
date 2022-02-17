@@ -1,5 +1,4 @@
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import React from 'react';
 import { render, screen, fireEvent } from 'test-utils';
 import { Profile } from '.';
 import { User } from 'interfaces';
@@ -13,27 +12,18 @@ describe('Profile component', () => {
     avatarLarger: 'avatar url'
   };
 
-  const handlers = [
-    rest.get('https://tiktok33.p.rapidapi.com/user/info/dave.xp', (req, res, ctx) => {
-      return res(ctx.json(user), ctx.delay(150));
-    })
-  ];
-
-  const server = setupServer(...handlers);
-
-  beforeAll(() => server.listen({
-    onUnhandledRequest: ({method, url}) => {
-      if (!url.pathname.includes('/user/info')) {
-        throw new Error('Forbidden request');
-      }
-    }
-  }))
-  afterEach(() => server.resetHandlers());
-  afterAll(() => server.close());
+  beforeEach(() => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(user),
+        ok: true,
+      })
+    ) as jest.Mock;
+  });
 
   it('should render properly', async () => {
-    render(<Profile />);
-    expect(screen.getByText('User Info')).toBeInTheDocument();
+    const { container } = render(<Profile />);
+    expect(container.firstChild).toHaveClass('profile-page');
     expect(await screen.findByText('Name: ' + user.nickname)).toBeInTheDocument();
     expect(await screen.findByText('Is account private: no')).toBeInTheDocument();
   });
