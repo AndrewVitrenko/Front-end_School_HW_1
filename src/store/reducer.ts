@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Post, Store, User, Video } from 'interfaces';
+import { Post, Store, User, Video } from 'shared/interfaces';
 
 const initialState: Store = {
   feed: [],
